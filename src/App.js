@@ -59,9 +59,13 @@ function App() {
   //clear all items
   const clearItems = () =>{
     setExpenses([]);
+    handleAlert({type:'danger', text: 'all itemsgit  deleted'});
   };
   //handle delete
   const handleDelete = (id) =>{
+      let tempExpenses = expenses.filter(item => item.id !== id);
+      setExpenses(tempExpenses)
+      handleAlert({type:'danger', text: 'item deleted'});
 
   };
   //handle edit
